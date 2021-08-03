@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>CS5890 Project 5 | Home</title>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+            <a class="navbar-brand" href="">{% load static %} <img src="{% static 'img/logo.png' %}" alt="logo" width="100" height="30"/></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="bg" ></div>
+
+
+
+
+
+<div class="col-lg-12">
+    <div class="index-container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3>About The Project</h3>
+                <p> This is a project for the Utah State University class CS 5890/6890 Practical Natural
+                    Language Processing taught by Dr. Qiwei Gan, Ph.D. This is a group assignment that was
+                    accomplished by Jayden Bates, Makalee Beelek, KC Gubler, and Braeden Stewart. From the
+                    options present, the group decided to choose Project 5: Medical Notes Named Entity
+                    Recognition Platform (Application-oriented).
+                <br>
+                <br>
+                    <i>Goal:</i>
+                <br>
+                <br>
+                    Given medical notes, highlight different medical related entities such as diseases and their codes, symptoms, medications, lab tests, etc, display in the webpage.
+                <br>
+                <br>
+                    <i>Skills needed:</i>
+                <br>
+                <ol>
+                    <li>
+                        CITI training for handling medical sensitive data
+                    </li>
+                    <li>
+                        Become authorized user of the sensitive medical data
+                    </li>
+                    <li>
+                        Data preprocessing and manipulation (regular expression, pandas lib)
+                    </li>
+                    <li>
+                        Named entity recognition
+                    </li>
+                    <li>
+                       Medical term code resolution
+                    </li>
+                    <li>
+                        Data visualization
+                    </li>
+                    <li>
+                        Web development
+                    </li>
+                </ol>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div class="index-container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3>Graphs</h3>
+                <p>*Explain what the graphs are*</p>
+                <h4>Sentiment Analysis</h4>
+                <p>*Place graph here*</p>
+                <h4>Topic Modeling</h4>
+                <p>*Place graph here*</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <div class="index-container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3>Results</h3>
+                <p>Due to the MIMIC-III files being too large, we cannot show the entire file at once on the webpage.
+                    Our solution was to break it up into several parts. Click one of the buttons below to run the code
+                    and display a part of the file.</p>
+                <br>
+                <div class="btn-container">
+                    <form action='' method='POST'>
+                        {% csrf_token %}
+                        <button type="submit" value="Reply" class="btn btn-default" name="highlight1">Highlight 1</button>
+                        <button type="submit" value="Reply" class="btn btn-default" name="highlight2">Highlight 2</button>
+                        <button type="submit" value="Reply" class="btn btn-default" name="highlight3">Highlight 3</button>
+                    </form>
+                    <br>
+                    <div class="panel panel-default">{{string | safe}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

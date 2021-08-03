@@ -1,0 +1,65 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+
+.bg {
+    z-index: -1;
+    background-image: url("../img/old_main.jpg");
+    height: 50%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(0%, -20px);
+}
+
+.index-container {
+    transform: translate(0%, 0%);
+    width: 100%;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: bold;
+    color: #00263A;
+    font-size: 80px;
+}
+
+small {
+    color: white;
+}
+
+.btn-container {
+    background-position: center;
+    position: center;
+    text-align: center;
+}
+
+.btn-default {
+    background-color: #00263A;
+    color: white;
+}
+
+.btn-default:hover {
+    background-color: #D0D0CE;
+    color: #00263A;
+}
+
+.btn-default:active {
+    background-color: #D0D0CE;
+    color: #00263A;
+}
+
+.btn-default:focus {
+    background-color: #0085CA;
+    color: white;
+}
+
+.btn-default:visited {
+    background-color: #8A8D8F;
+    color: white;
+}
+
+
+
