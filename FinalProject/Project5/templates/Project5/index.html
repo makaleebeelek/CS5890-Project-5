@@ -109,17 +109,87 @@
                 <h3>Results</h3>
                 <p>Due to the MIMIC-III files being too large, we cannot show the entire file at once on the webpage.
                     Our solution was to break it up into several parts. Click one of the buttons below to run the code
-                    and display a part of the file.</p>
+                    and display a part of the file or input your own text into the textbox below.</p>
                 <br>
                 <div class="btn-container">
                     <form action='' method='POST'>
                         {% csrf_token %}
-                        <button type="submit" value="Reply" class="btn btn-default" name="highlight1">Highlight 1</button>
-                        <button type="submit" value="Reply" class="btn btn-default" name="highlight2">Highlight 2</button>
-                        <button type="submit" value="Reply" class="btn btn-default" name="highlight3">Highlight 3</button>
+                        <div class="form-group">
+                            <button type="submit" value="Reply" class="btn btn-default" name="highlight1">Highlight 1</button>
+                            <button type="submit" value="Reply" class="btn btn-default" name="highlight2">Highlight 2</button>
+                            <button type="submit" value="Reply" class="btn btn-default" name="highlight3">Highlight 3</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6">
+                            <div class="form-group w-75">
+                                <textarea class="form-control w-75" name="textInput" rows="4" cols="20" placeholder="Input your text here!"></textarea>
+                            </div>
+                            </div>
+                            <div class="col-lg-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-1">
+                                <button type="submit" value="Reply" class="btn btn-default" name="submitText">Submit</button>
+                            </div>
+                            <div class="col-lg-8"></div>
+                        </div>
                     </form>
-                    <br>
-                    <div class="panel panel-default">{{string | safe}}</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="panel panel-default ">
+                            <div class="panel-body">
+                                <h4>Legend</h4>
+                                <p>
+                                    <mark class="entity" style="background: #E5EB34; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+                                        <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">
+                                            ICD-10-CM
+                                        </span>
+                                    </mark>
+                                    &nbsp; : International Classification of Diseases, Tenth Revision, Clinical Modification. A
+                                    system used by physicians and other healthcare providers to classify and code all
+                                    diagnoses, symptoms, and procedures in the United States. Used in clinical and
+                                    outpatient settings.
+                                    <br>
+                                    <br>
+                                    <mark class="entity" style="background: #EB344; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+                                        <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">
+                                            ICD-10-PCS
+                                        </span>
+                                    </mark>
+                                    : International Classification of Diseases, Tenth Revision, Procedure Coding System.
+                                    A system used in the United states to classify and code diagnoses, symptoms, and
+                                    procedures. Used exclusively in the United States in inpatient, hospital settings.
+                                    <br>
+                                    <br>
+                                    <mark class="entity" style="background: #00FFFF; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+                                        <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">
+                                            CHEMICAL
+                                        </span>
+                                    </mark>
+                                     : The mention of a chemical or medication.
+                                    <br>
+                                    <br>
+                                    <mark class="entity" style="background: #ADFF2F; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+                                        <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">
+                                            DISEASE
+                                        </span>
+                                    </mark>
+                                    &nbsp; : The mention of a disease or diagnoses.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                {{string | safe}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
