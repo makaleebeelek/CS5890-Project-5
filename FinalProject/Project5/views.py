@@ -12,6 +12,7 @@ import numpy as np
 
 ICD_10_CM_PAT = re.compile(r'\b(?<!#)([A-Z]\d[A-Z0-9]{1,5})\b')
 ICD_10_PCS_PAT = re.compile(r'\b(?<!#)([0-9A-HJ-NP-Z]{7})\b')
+REMOVE_PRIVATE_INFO = re.compile('(\[\*\*.+\*\*\])')
 nlp = spacy.load("en_ner_bc5cdr_md")
 
 
@@ -31,7 +32,8 @@ def index(request):
         string = "<h4>Click a button above or input text into the textbox to run the code!</h4>"
     return render(request, 'Project5/index.html', {'string': string})
 
-def getHighlight(text="I am testing T10. My next test is AA23B56."):
+def getHighlight(text):
+    text = removeNamePattern(text)
     doc = nlp(text)
     myHtmlStr = highlight(doc)
     return myHtmlStr
@@ -66,6 +68,10 @@ def combineText(textDF):
     for i in range(len(textDF)):
         returnText += "\n" + textDF[0].iloc[i]
     return returnText
+
+def removeNamePattern(text):
+    text = REMOVE_PRIVATE_INFO.sub('', str(text))
+    return text
 
 
 
