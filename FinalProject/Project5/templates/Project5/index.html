@@ -92,11 +92,19 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <h3>Graphs</h3>
-                <p>*Explain what the graphs are*</p>
+                <p>The below graphs are results on the MIMIC-III data.</p>
                 <h4>Sentiment Analysis</h4>
-                <p>*Place graph here*</p>
+                <p>TextBlob returns 2 values (polarity and subjectivity). Polarity has a range from -1 to 1. The closer
+                    to -1 a comment is, the more negative the comment is. The closer to 1 a comment is, to more positive
+                    the comment is. Subjectivity has a range from 0 to 1. The closer to 0 a comment is, the more factual
+                    it is. The closer to 1 a comment is, the more opinionated it is.
+                </p>
+                <p><img src="{% static 'img/polarityAndSubjectivity.png' %}" alt="Sentiment Analysis Graph"/></p>
                 <h4>Topic Modeling</h4>
-                <p>*Place graph here*</p>
+                <p> The Topic Modeling graph shows the most important topics based on the input text from greatest to
+                    least.
+                </p>
+                <p><img src="{% static 'img/topTopics.png' %}" alt="Topic Modeling Graph"/></p>
             </div>
         </div>
     </div>
