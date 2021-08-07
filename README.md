@@ -15,3 +15,13 @@
 4. Run the server locally by running `$ python manage.py runserver`
 5. The output will give you an address to go to, open any browser and paste that address into the search bar
 6. Tada! It should work!
+
+## Where specific code is located:
+Most of the code is located in the `.../relevantCode` directory. The code for the HTML, CSS, and Django is all located in the `.../FinalProject/` directory.
+* The sentiment analysis and topic modeling is located in `.../relevantCode/group_5_Project-2.ipynb`
+* The highlight function is located in `.../relevantCode/highlight_function.ipynb`
+* The regex for redacted personal information is located in `.../relevantCode/RemoveNamePattern.ipynb`
+* The html is located in `.../FinalProject/Project5/templates/Project5/index.html`
+* The css is located in `.../FinalProject/Project5/static/css/style.css`
+* The code applied to the website to make the buttons, textbox, highlighting on the webpage function is in `.../FinalProject/Project5/views.py`
+* We could not upload the entire MIMIC-III files, but portions of them can be found at `.../FinalProject/Project5/NOTEEVENTS-0.csv`, `.../FinalProject/Project5/NOTEEVENTS-1.csv`, `.../FinalProject/Project5/NOTEEVENTS-2.csv`
