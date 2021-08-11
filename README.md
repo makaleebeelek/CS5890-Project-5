@@ -1,4 +1,8 @@
 # CS5890-Project-5
+## A note about SparkNLP
+We spent multiple days trying to get the Healthcare SparkNLP from John Snow Labs to work. Each group member ran into errors trying to follow the instructions provided by John Snow Labs and could not find any way to get it to work. Instead of using SparkNLP, we created our own functions and work arounds to be able to complete this project.
+
+
 ## What you need to run this project:
 1. python
 2. django
